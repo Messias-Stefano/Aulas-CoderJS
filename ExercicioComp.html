@@ -1,0 +1,33 @@
+<html>
+    <head>Exercicio Complementar</head>
+    <body>
+        <script>
+                 // Função para calcular o ICMS
+                function calcularICMS(precoCusto, aliquota) {
+                    return precoCusto * (aliquota / 100);
+                }
+
+                // Função para calcular o preço com ICMS
+                function calcularPrecoComICMS(precoCusto, aliquota) {
+                    var icms = calcularICMS(precoCusto, aliquota);
+                    return precoCusto + icms;
+                }
+
+                // Função para exibir o preço calculado com ICMS em um alert
+                function exibirPrecoCalculado(precoCalculado) {
+                    alert(`O preço calculado com ICMS é: R$ ${precoCalculado.toFixed(2)}`);
+                }
+
+                // Informações de entrada
+                var precoCusto = parseFloat(prompt("Informe o preço de custo:"));
+                var aliquotaICMS = parseFloat(prompt("Informe a alíquota de ICMS (%):"));
+
+                // Calcular o preço com ICMS
+                var precoComICMS = calcularPrecoComICMS(precoCusto, aliquotaICMS);
+
+                // Exibir o preço calculado com ICMS
+                exibirPrecoCalculado(precoComICMS);
+
+        </script>
+    </body>
+</html>
