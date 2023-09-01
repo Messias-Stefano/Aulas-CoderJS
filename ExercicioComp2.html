@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <script>
+             function simularParcelas() {
+            const valorEmprestimo = parseFloat(prompt("Informe o valor do empréstimo:"));
+            const taxaJuros = parseFloat(prompt("Informe a taxa de juros (%):"));
+            const numeroParcelas = parseInt(prompt("Informe o número de parcelas:"));
+
+            const taxaJurosDecimal = taxaJuros / 100;
+            let saldoDevedor = valorEmprestimo;
+            let parcela = saldoDevedor * (taxaJurosDecimal / (1 - Math.pow(1 + taxaJurosDecimal, -numeroParcelas)));
+
+            let numeroParcela = 1;
+            console.log("Detalhes das parcelas:");
+            while (numeroParcela <= numeroParcelas) {
+                console.log(`Parcela ${numeroParcela}: R$ ${parcela.toFixed(2)}`);
+                saldoDevedor -= parcela;
+                parcela = saldoDevedor * (taxaJurosDecimal / (1 - Math.pow(1 + taxaJurosDecimal, -numeroParcelas)));
+                numeroParcela++;
+            }
+        }
+
+        simularParcelas();
+        </script>
+       
+    </body>
+</html>
